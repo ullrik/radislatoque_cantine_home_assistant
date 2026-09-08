@@ -3,7 +3,7 @@
   "config": {
     "step": {
       "user": {
-        "title": "Configurer la cantine",
+        "title": "Configurer la cantine Radis la Toque",
         "description": "Renseignez l'identifiant du restaurant Radis la Toque.",
         "data": {
           "restaurant_id": "Identifiant du restaurant",
