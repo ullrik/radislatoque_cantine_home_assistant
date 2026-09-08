@@ -1,0 +1,38 @@
+{
+  "title": "Cantine Radis la Toque",
+  "config": {
+    "step": {
+      "user": {
+        "title": "Configurer la cantine",
+        "description": "Renseignez l'identifiant du restaurant Radis la Toque.",
+        "data": {
+          "restaurant_id": "Identifiant du restaurant",
+          "name": "Nom"
+        },
+        "data_description": {
+          "restaurant_id": "Pour Couëron, l'identifiant est 1097.",
+          "name": "Nom affiché dans Home Assistant."
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Impossible de récupérer le menu du restaurant.",
+      "unknown": "Une erreur inattendue s'est produite."
+    },
+    "abort": {
+      "already_configured": "Ce restaurant est déjà configuré."
+    }
+  },
+  "entity": {
+    "sensor": {
+      "menu": {
+        "name": "Menu cantine"
+      }
+    },
+    "button": {
+      "refresh": {
+        "name": "Actualiser le menu"
+      }
+    }
+  }
+}
