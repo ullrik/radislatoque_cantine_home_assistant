@@ -8,18 +8,18 @@ CONF_RESTAURANT_ID = "restaurant_id"
 CONF_NAME = "name"
 
 DEFAULT_RESTAURANT_ID = "1097"
-DEFAULT_NAME = "Cantine Sacha"
+DEFAULT_NAME = "cantine_radislatoque"
 
 PLATFORMS: list[Platform] = [Platform.SENSOR, Platform.BUTTON]
 
 BASE_URL = "https://www.radislatoque.fr/restaurants"
 
 UPDATE_HOUR = 6
-UPDATE_MINUTE = 0
+UPDATE_MINUTE = 10
 UPDATE_SECOND = 0
 
 STORAGE_VERSION = 1
-STORAGE_KEY_PREFIX = "cantine"
+STORAGE_KEY_PREFIX = "cantine_radislatoque"
 
 ATTR_PLANNING = "planning"
 ATTR_LAST_UPDATE = "last_update"
