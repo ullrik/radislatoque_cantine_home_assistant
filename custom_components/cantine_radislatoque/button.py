@@ -18,7 +18,7 @@ class CantineRefreshButton(CoordinatorEntity[CantineCoordinator], ButtonEntity):
     """Button that forces a new scrape."""
 
     _attr_has_entity_name = True
-    _attr_name = "Actualiser le menu"
+    _attr_name = "Cantine Radis la Toque - Actualiser le menu"
     _attr_icon = "mdi:refresh"
 
     def __init__(self, coordinator: CantineCoordinator) -> None:
