@@ -45,7 +45,7 @@ async def async_setup_entry(hass: HomeAssistant, entry: CantineConfigEntry) -> b
 
     async def _scheduled_refresh(now: datetime) -> None:
         """Refresh every day at 06:00 local Home Assistant time."""
-        _LOGGER.debug("Actualisation planifiée Cantine")
+        _LOGGER.debug("Actualisation planifiée Cantine Radis la Toque")
         await coordinator.async_request_refresh()
 
     remove_listener = async_track_time_change(
