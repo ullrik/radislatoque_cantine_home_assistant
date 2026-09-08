@@ -3,7 +3,7 @@ from __future__ import annotations
 
 from homeassistant.const import Platform
 
-DOMAIN = "cantine"
+DOMAIN = "cantine_radislatoque"
 CONF_RESTAURANT_ID = "restaurant_id"
 CONF_NAME = "name"
 
