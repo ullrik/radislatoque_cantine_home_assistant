@@ -22,7 +22,7 @@ class CantineMenuSensor(CoordinatorEntity[CantineCoordinator], SensorEntity):
     """Menu sensor exposing the current week as an attribute."""
 
     _attr_has_entity_name = True
-    _attr_name = "Menu cantine"
+    _attr_name = "Menu cantine Radis la Toque"
     _attr_icon = "mdi:silverware-fork-knife"
     _attr_device_class = SensorDeviceClass.TIMESTAMP
 
