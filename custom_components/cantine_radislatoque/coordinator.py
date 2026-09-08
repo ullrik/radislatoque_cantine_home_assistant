@@ -24,7 +24,7 @@ class CantineCoordinator(DataUpdateCoordinator[dict[str, Any]]):
         super().__init__(
             hass,
             _LOGGER,
-            name="Cantine",
+            name="Cantine Radislatoque",
             config_entry=entry,
             update_interval=None,
             always_update=True,
@@ -85,7 +85,7 @@ class CantineCoordinator(DataUpdateCoordinator[dict[str, Any]]):
             raise UpdateFailed(str(err)) from err
         except Exception as err:
             self.last_error = str(err)
-            _LOGGER.exception("Erreur inattendue pendant l'actualisation de la cantine")
+            _LOGGER.exception("Erreur inattendue pendant l'actualisation de la cantine Radis la Toque")
             raise UpdateFailed(str(err)) from err
 
         result = {
