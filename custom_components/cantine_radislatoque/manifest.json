@@ -2,7 +2,7 @@
   "domain": "cantine_radislatoque",
   "name": "Cantine Radis la Toque",
   "codeowners": [
-    "@Ullrik"
+    "@ullrik"
   ],
   "config_flow": true,
   "documentation": "https://github.com/ullrik/radislatoque_cantine_home_assistant/",
