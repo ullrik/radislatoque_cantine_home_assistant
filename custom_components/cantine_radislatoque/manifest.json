@@ -5,9 +5,10 @@
     "@Ullrik"
   ],
   "config_flow": true,
-  "documentation": "https://www.radislatoque.fr/restaurants/1097",
+  "documentation": "https://github.com/ullrik/radislatoque_cantine_home_assistant/",
   "integration_type": "service",
   "iot_class": "cloud_polling",
+  "issue_tracker": "https://github.com/ullrik/radislatoque_cantine_home_assistant/issues",
   "requirements": [
     "beautifulsoup4==4.13.3"
   ],
