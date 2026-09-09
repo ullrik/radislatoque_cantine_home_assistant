@@ -7,7 +7,7 @@ Cette intégration reprend le scraping du site https://www.radislatoque.fr et l'
 - configuration par l'interface Home Assistant avec l'id du restaurant (ville) + nom du sensor désiré ;
 - récupération du planning de la semaine courante ;
 - actualisation automatique tous les jours à 06:10 (heure locale de Home Assistant) ;
-- après un redémarrage postérieur à 06:00, une actualisation est faite si celle du jour manque ;
+- après un redémarrage postérieur à 06:10, une actualisation est faite si celle du jour manque ;
 - actualisation manuelle par un bouton ;
 - conservation en stockage interne Home Assistant de la dernière récupération réussie ;
 - si une actualisation réseau échoue, le planning précédent n'est pas écrasé ;
