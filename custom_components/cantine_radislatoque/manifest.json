@@ -1,7 +1,9 @@
 {
   "domain": "cantine_radislatoque",
   "name": "Cantine Radis la Toque",
-  "codeowners": [],
+  "codeowners": [
+    "@Ullrik"
+  ],
   "config_flow": true,
   "documentation": "https://www.radislatoque.fr/restaurants/1097",
   "integration_type": "service",
@@ -10,5 +12,5 @@
     "beautifulsoup4==4.13.3"
   ],
   "single_config_entry": true,
-  "version": "1.0.0"
+  "version": "1.0.3"
 }
