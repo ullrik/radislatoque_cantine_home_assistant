@@ -10,7 +10,7 @@ CONF_NAME = "name"
 DEFAULT_RESTAURANT_ID = "1097"
 DEFAULT_NAME = "cantine_radislatoque"
 
-PLATFORMS: list[Platform] = [Platform.SENSOR, Platform.BUTTON]
+PLATFORMS: list[Platform] = [Platform.SENSOR, Platform.BUTTON, Platform.SELECT]
 
 BASE_URL = "https://www.radislatoque.fr/restaurants"
 
