@@ -129,4 +129,4 @@ Pour activer les logs détaillés :
     logger:
       default: info
       logs:
-        custom_components.espace_citoyen: debug
+        custom_components.cantine_radislatoque: debug
