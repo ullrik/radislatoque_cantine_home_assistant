@@ -1,12 +1,13 @@
-"""Select platform for the Cantine integration."""
+"""Select platform for Cantine."""
 
 from __future__ import annotations
 
 from homeassistant.components.select import SelectEntity
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.core import HomeAssistant
 from homeassistant.helpers.entity_platform import AddEntitiesCallback
-from homeassistant.util import dt as dt_util
+from homeassistant.helpers.update_coordinator import CoordinatorEntity
+
+from . import CantineConfigEntry
+from .coordinator import CantineCoordinator
 
 
 JOURS = [
@@ -18,45 +19,44 @@ JOURS = [
 ]
 
 
-def _jour_actuel() -> str:
-    """Return the current weekday, limited to the school week."""
-    weekday = min(dt_util.now().weekday(), 4)
-    return JOURS[weekday]
+async def async_setup_entry(hass, entry: CantineConfigEntry, async_add_entities: AddEntitiesCallback) -> None:
+    """Set up the menu day selector."""
+    async_add_entities([CantineDaySelect(entry.runtime_data.coordinator)])
 
 
-async def async_setup_entry(
-    hass: HomeAssistant,
-    entry: ConfigEntry,
-    async_add_entities: AddEntitiesCallback,
-) -> None:
-    """Set up the Cantine select."""
-    async_add_entities(
-        [
-            CantineDaySelect(),
-        ]
-    )
-
-
-class CantineDaySelect(SelectEntity):
+class CantineDaySelect(CoordinatorEntity[CantineCoordinator], SelectEntity):
     """Select the day to display."""
 
     _attr_has_entity_name = True
+    _attr_name = "Jour du menu"
     _attr_icon = "mdi:calendar-week"
     _attr_options = JOURS
 
-    def __init__(self) -> None:
+    def __init__(self, coordinator: CantineCoordinator) -> None:
         """Initialize the select."""
-        self._attr_unique_id = "jour_menu_cantine"
-        self._attr_current_option = _jour_actuel()
+        super().__init__(coordinator)
 
-    @property
-    def name(self) -> str:
-        """Return the entity name."""
-        return "Jour du menu"
+        self._attr_unique_id = f"{coordinator.entry.entry_id}_menu_day"
+
+        # Sélectionne automatiquement le jour actuel
+        self._attr_current_option = self._get_current_day()
+
+    @staticmethod
+    def _get_current_day() -> str:
+        """Return the current day."""
+        from homeassistant.util import dt as dt_util
+
+        weekday = dt_util.now().weekday()
+
+        # Samedi et dimanche -> vendredi
+        if weekday > 4:
+            weekday = 4
+
+        return JOURS[weekday]
 
     async def async_select_option(self, option: str) -> None:
         """Select a menu day."""
-        if option not in self._attr_options:
+        if option not in JOURS:
             return
 
         self._attr_current_option = option
