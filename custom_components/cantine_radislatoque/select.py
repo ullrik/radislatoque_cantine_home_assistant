@@ -53,6 +53,11 @@ class CantineDaySelect(CoordinatorEntity[CantineCoordinator], SelectEntity):
             weekday = 4
 
         return JOURS[weekday]
+    
+    def _handle_coordinator_update(self) -> None:
+        """Update the selected day after a coordinator refresh."""
+        self._attr_current_option = self._get_current_day()
+        self.async_write_ha_state()
 
     async def async_select_option(self, option: str) -> None:
         """Select a menu day."""
